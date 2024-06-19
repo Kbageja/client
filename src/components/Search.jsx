@@ -15,6 +15,7 @@ const Search = () => {
         withCredentials:true,
   });
       setResults(response.data);
+      console.log(`${server}`);
     } catch (err) {
       console.error(err);
     }
