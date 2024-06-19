@@ -1,6 +1,7 @@
 // src/components/Search.js
 import React, { useState } from 'react';
 import axios from 'axios';
+import { server } from '../main';
 import './Search.css';
 
 
@@ -10,7 +11,7 @@ const Search = () => {
 
   const handleSearch = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/search?query=${query}`,{
+      const response = await axios.get(`${server}/search?query=${query}`,{
         withCredentials:true,
   });
       setResults(response.data);
